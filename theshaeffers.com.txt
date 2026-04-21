@@ -1,0 +1,59 @@
+;;
+;; Domain:     theshaeffers.com.
+;; Exported:   2026-04-20 21:22:43
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+theshaeffers.com	3600	IN	SOA	stan.ns.cloudflare.com. dns.cloudflare.com. 2052838676 10000 2400 604800 3600
+
+;; NS Records
+theshaeffers.com.	86400	IN	NS	stan.ns.cloudflare.com.
+theshaeffers.com.	86400	IN	NS	tori.ns.cloudflare.com.
+
+;; A Records
+plex.theshaeffers.com.	1	IN	A	18.220.113.182 ; cf_tags=cf-proxied:false
+remote.theshaeffers.com.	1	IN	A	142.12.145.96 ; cf_tags=cf-proxied:true
+theshaeffers.com.	1	IN	A	216.239.36.21 ; Google sites cf_tags=cf-proxied:true
+theshaeffers.com.	1	IN	A	216.239.38.21 ; Google sites cf_tags=cf-proxied:true
+theshaeffers.com.	1	IN	A	216.239.32.21 ; Google sites cf_tags=cf-proxied:true
+theshaeffers.com.	1	IN	A	216.239.34.21 ; Google Sites cf_tags=cf-proxied:true
+
+;; CNAME Records
+beta.theshaeffers.com.	1	IN	CNAME	ghs.googlehosted.com. ; cf_tags=cf-proxied:false
+docs.theshaeffers.com.	1	IN	CNAME	ghs.google.com. ; cf_tags=cf-proxied:false
+mail.theshaeffers.com.	1	IN	CNAME	ghs.google.com. ; cf_tags=cf-proxied:false
+n8n.theshaeffers.com.	1	IN	CNAME	46a07fab-6976-456c-ad6f-a6440471de44.cfargotunnel.com. ; cf_tags=cf-proxied:true
+sites.theshaeffers.com.	1	IN	CNAME	ghs.google.com. ; cf_tags=cf-proxied:false
+www.theshaeffers.com.	1	IN	CNAME	ghs.googlehosted.com. ; cf_tags=cf-proxied:false
+
+;; MX Records
+theshaeffers.com.	1	IN	MX	10 alt3.aspmx.l.google.com.
+theshaeffers.com.	1	IN	MX	1 aspmx.l.google.com.
+theshaeffers.com.	1	IN	MX	5 alt2.aspmx.l.google.com.
+theshaeffers.com.	1	IN	MX	10 alt4.aspmx.l.google.com.
+theshaeffers.com.	1	IN	MX	5 alt1.aspmx.l.google.com.
+
+;; TXT Records
+_dmarc.theshaeffers.com.	1	IN	TXT	"v=DMARC1; p=reject; rua=mailto:dmarc@theshaeffers.com"
+google._domainkey.theshaeffers.com.	1	IN	TXT	"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCV+QDkFDsyhDwTbpzjcUCvJXzQGjj6kW8DW4CZUAoQAoy0SsONVhCCJWhW2WucCCyqnER9jXfk1Dm9NNSzeY/JVn5fYO8zMOseQ3CIyF44LO3s0uj35VvIzrnsZvv1JbE9skQHNPMtTDRY50g5semJPG8buvflRuKOaQswgODW3QIDAQAB"
+theshaeffers.com.	1	IN	TXT	"v=spf1 include:_spf.google.com ~all"
