@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alabama Adventures | The Shaeffers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#c9ebcc",
+                        "surface-tint": "#48654d",
+                        "on-secondary-container": "#742407",
+                        "background": "#fdf9f3",
+                        "on-primary-fixed": "#04210e",
+                        "surface-bright": "#fdf9f3",
+                        "outline": "#737971",
+                        "tertiary": "#28536b",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe8e2",
+                        "on-background": "#1c1c18",
+                        "on-tertiary-fixed": "#001e2d",
+                        "tertiary-fixed": "#c6e7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dddad4",
+                        "tertiary-fixed-dim": "#a2cce9",
+                        "secondary-fixed": "#ffdbd0",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#424842",
+                        "secondary-container": "#fe8c67",
+                        "surface-container-highest": "#e6e2dc",
+                        "on-secondary-fixed-variant": "#7e2c0f",
+                        "primary-container": "#4f6d54",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#cce9ff",
+                        "tertiary-container": "#426b84",
+                        "outline-variant": "#c2c8c0",
+                        "on-tertiary-fixed-variant": "#1f4b63",
+                        "surface-container": "#f1ede7",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f4f0ea",
+                        "surface-container-low": "#f7f3ed",
+                        "inverse-surface": "#31302d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#cbedce",
+                        "on-surface": "#1c1c18",
+                        "secondary": "#9d4224",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "inverse-primary": "#aecfb1",
+                        "on-secondary-fixed": "#3a0b00",
+                        "surface-variant": "#e6e2dc",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#304d36",
+                        "on-primary": "#ffffff",
+                        "primary": "#37553d",
+                        "surface": "#fdf9f3",
+                        "primary-fixed-dim": "#aecfb1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1c1c18; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_20px_40px_rgba(28,28,24,0.06)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Family Crest" class="w-8 h-8 opacity-90" data-alt="Updated family crest featuring an 'S', a cross, a staff, and a gold cotton boll symbol on a multi-colored shield." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_DIivQ8g-ulamRqHr9J92N137fBWJPCF30XR5fv0-oxGEQwFRu4tFcceU9LB-z_6ESmrCg7ZHUSBlcdXCwafIt7v-jRnxqtC0Nt4pth-JEheebzy4txU9wViNam_09I_9t6BQ9wOKKE_QQmkvB5Y5WXbZ-SXZlw4uegAyNytY40a12SoSA4OPtQm8SqIDQu6g3YJ4xk2CD2kM5mwSQut-Jh0Vv94qQKlKrW71c6mHNhYtfdW87xB0lQHTJedN03MEhbbSv5YYc_o"/>
+</div>
+<h1 class="text-3xl font-serif italic tracking-tight text-emerald-900 dark:text-emerald-100">The Shaeffers</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-800 transition-colors duration-300" href="#">Home</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-800 transition-colors duration-300" href="#">Journal</a>
+<a class="text-emerald-900 dark:text-emerald-100 font-bold border-b-2 border-orange-800 transition-colors duration-300" href="#">Adventures</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-800 transition-colors duration-300" href="#">Roots</a>
+</nav>
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-100 text-3xl">menu</button>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-6 lg:px-12 pt-12">
+<!-- Hero Section -->
+<section class="mb-24 flex flex-col md:flex-row items-end gap-8">
+<div class="md:w-2/3">
+<span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-4 block">Southern Wanderlust</span>
+<h2 class="text-6xl md:text-8xl font-serif italic text-primary leading-tight">Alabama Adventures</h2>
+<p class="mt-8 text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    From the whispering pines of the Tennessee Valley to the sugar-white sands of the Gulf, these are the moments that define our family's journey through the Heart of Dixie.
+                </p>
+</div>
+<div class="md:w-1/3 flex flex-col items-start gap-4">
+<div class="bg-secondary-container p-6 rounded-xl rotate-2 shadow-lg">
+<p class="font-serif italic text-on-secondary-container text-lg">"Faith is the compass, Alabama is the canvas."</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-32">
+<!-- Large Feature: Gulf Shores -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Serene sunrise at Gulf Shores Alabama with turquoise water gently lapping onto white sand beach and soft pastel morning sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3z2ZKzqDQEOPXsbTMZ7RQlxqC_oNOopMCExFQOdoaLnLs0Fp50rCl-7Lprt1h8kDqrqLFXYloTfS4bhuNCBD31Kk9fKEIDd-3P1xqT56pqvqhm8TTvIPN44ugn6YjZg5rGZ5So39ibW_jTjkZYhrqRH0gyNbcABhQQKbi3k2wA7B37EN_mr9rN2MBLGf8YFVfURxcbACvQ8PM1Q6qpoPV-1J43PMwaWGybdGcZ7M-JOzh1IHDkSA6fMk2UGtexDzYqjTCJozyZTY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-white/80 text-sm font-medium mb-2">Summer 2024</span>
+<h3 class="text-white text-3xl font-serif italic">Gulf Shores Sanctuary</h3>
+</div>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h4 class="text-2xl font-serif italic text-primary">The Coastal Quiet</h4>
+<p class="text-on-surface-variant mt-2 max-w-lg">Our annual pilgrimage to the edge of the world. Watching the kids chase the tide while the sun dips low is where we find our deepest peace.</p>
+</div>
+<span class="text-tertiary-container font-bold text-sm bg-tertiary-fixed px-3 py-1 rounded-full">Coastal</span>
+</div>
+</div>
+<!-- Vertical: Cheaha State Park -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high h-full min-h-[400px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Lush green mountains of Alabama at Cheaha State Park with rolling hills fading into a blue atmospheric haze" src="https://lh3.googleusercontent.com/aida/ADBb0uhsg9-RZA8t66tOJqzx4ygVyxwv_e0ev23cU18w_p9gsS-l2ttFQWnzwjnUBYgWQtaUOS6IBhTqOLFaPtvKg4Dk3h1edKqRSBMn-23k-KPICSf9bsuuvLyR4S6qIJMuaDaua8GnwzpwxtVMx8wAHdx_qYhXmI-vdcubofuIvHHpFx1Q9aAK5HvDkLfa7rxtSp7b6Mn-7ihsM1A6HRmBxrRdSOh2qzxjFhjE9sdohW7eg15HZeGlksTG_RZKV9HdicThhJjZ6qZTYA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8"><span class="text-white/80 text-sm font-medium mb-2">Winter 2023</span><h3 class="text-white text-3xl font-serif italic">Christmas Train</h3></div>
+</div>
+</div>
+<!-- Heirloom Ribbon -->
+<div class="md:col-span-12 my-12">
+<div class="relative bg-gradient-to-r from-secondary to-secondary-container py-8 px-12 rounded-xl -rotate-1 shadow-xl">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">park</span>
+<h5 class="text-white text-xl font-serif italic">Shaeffer Tip: Best biscuits in the valley can be found at "The Old Mill" in Tuscumbia. Don't skip the apple butter.</h5>
+</div>
+<button class="bg-white text-secondary px-6 py-2 rounded-lg font-bold hover:bg-surface transition-colors shadow-sm">View Map</button>
+</div>
+</div>
+</div>
+<!-- Square: Huntsville Space Center -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Massive Saturn V rocket on display at the US Space and Rocket Center in Huntsville Alabama with dramatic upward perspective" src="https://lh3.googleusercontent.com/aida/ADBb0uhsg9-RZA8t66tOJqzx4ygVyxwv_e0ev23cU18w_p9gsS-l2ttFQWnzwjnUBYgWQtaUOS6IBhTqOLFaPtvKg4Dk3h1edKqRSBMn-23k-KPICSf9bsuuvLyR4S6qIJMuaDaua8GnwzpwxtVMx8wAHdx_qYhXmI-vdcubofuIvHHpFx1Q9aAK5HvDkLfa7rxtSp7b6Mn-7ihsM1A6HRmBxrRdSOh2qzxjFhjE9sdohW7eg15HZeGlksTG_RZKV9HdicThhJjZ6qZTYA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8"><span class="text-white/80 text-sm font-medium mb-2">Winter 2023</span><h3 class="text-white text-3xl font-serif italic">Christmas Train</h3></div>
+</div>
+<div class="mt-4">
+<h4 class="text-xl font-serif italic text-primary">Huntsville Heights</h4>
+<p class="text-on-surface-variant text-sm mt-2">Sparking curiosity in the next generation of explorers.</p>
+</div>
+</div>
+<!-- Wide: Lake Martin -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high aspect-[2/1]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Scenic lake landscape in Alabama with calm blue water reflecting a pine-filled shoreline at sunset" src="https://lh3.googleusercontent.com/aida/ADBb0ujofT2fUojB5O3eP4CSoQhcGyJxl13ctVn1cCNPeloDUpEamHlOa5r8TWTMtVFodwN9TO3Bcj_G63evchnWW24JgVKZosNEuttNTbjPiFYa9NrEPcdmdfvOe7YiSAoFL9FEOOdC4VP20s1AHOnItAutYAbtmHi_9SO4ItPRpALemHuSX9k7xICyjbYL69ERXRqhGTPNNecdLMknj8Fn4CVAuQWAsjITy67eQ6_xzXRNZy1ruwgPl4q2NmnaOIdlnbdSRE2OO2GKAw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<h3 class="text-white text-3xl font-serif italic">Prattville Lights</h3>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="text-xl font-serif italic text-primary">A Walk Through the Lights</h4>
+<p class="text-on-surface-variant text-sm mt-2">Walking through the canal lights in Prattville, where every glow reminds us of the joy we find together.</p>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<section class="bg-surface-container rounded-3xl p-12 md:p-24 text-center relative overflow-hidden mb-12">
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-5xl font-serif italic text-primary mb-6">Where to next?</h2>
+<p class="text-on-surface-variant text-lg mb-10">We're always documenting our next journey. Join our newsletter to get archival-quality updates on our latest discoveries across the South.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<input class="bg-surface-container-lowest border-none rounded-xl px-6 py-4 w-full sm:w-80 focus:ring-2 focus:ring-primary outline-none" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-opacity">Subscribe</button>
+</div>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary/10 rounded-full blur-3xl"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 full-width py-16 px-8 mt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto w-full">
+<div>
+<h3 class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100 mb-6">The Shaeffer Archivist</h3>
+<p class="text-stone-500 dark:text-stone-400 font-sans text-sm tracking-tight leading-relaxed max-w-sm">
+                    © 2024 The Shaeffer Archivist. Cultivating growth and faith in Alabama. A digital sanctuary for memories, adventures, and legacy.
+                </p>
+</div>
+<div class="flex flex-col md:items-end gap-8">
+<div class="flex flex-wrap gap-6 md:gap-12">
+<a class="text-stone-500 hover:text-emerald-800 underline decoration-orange-800/30 underline-offset-4 transition-all duration-300" href="#">Home</a>
+<a class="text-stone-500 hover:text-emerald-800 underline decoration-orange-800/30 underline-offset-4 transition-all duration-300" href="#">Journal</a>
+<a class="text-orange-800 font-semibold underline decoration-orange-800/30 underline-offset-4 transition-all duration-300" href="#">Adventures</a>
+<a class="text-stone-500 hover:text-emerald-800 underline decoration-orange-800/30 underline-offset-4 transition-all duration-300" href="#">Roots</a>
+<a class="text-stone-500 hover:text-emerald-800 underline decoration-orange-800/30 underline-offset-4 transition-all duration-300" href="#">Privacy</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-emerald-900 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-emerald-900 cursor-pointer">photo_camera</span>
+<span class="material-symbols-outlined text-emerald-900 cursor-pointer">mail</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-stone-50 dark:bg-stone-900 rounded-t-3xl shadow-[0_-10px_30px_rgba(28,28,24,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:bg-stone-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-serif text-[11px] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:bg-stone-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-serif text-[11px] tracking-wide">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-orange-100/50 dark:bg-orange-900/30 text-orange-900 dark:text-orange-200 rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">landscape</span>
+<span class="font-serif text-[11px] tracking-wide">Adventures</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:bg-stone-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">church</span>
+<span class="font-serif text-[11px] tracking-wide">Roots</span>
+</a>
+</nav>
+</body></html>

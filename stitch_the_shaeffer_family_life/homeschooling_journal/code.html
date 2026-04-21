@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Shaeffers | Homeschooling Journal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#c9ebcc",
+                        "surface-tint": "#48654d",
+                        "on-secondary-container": "#742407",
+                        "background": "#fdf9f3",
+                        "on-primary-fixed": "#04210e",
+                        "surface-bright": "#fdf9f3",
+                        "outline": "#737971",
+                        "tertiary": "#28536b",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe8e2",
+                        "on-background": "#1c1c18",
+                        "on-tertiary-fixed": "#001e2d",
+                        "tertiary-fixed": "#c6e7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dddad4",
+                        "tertiary-fixed-dim": "#a2cce9",
+                        "secondary-fixed": "#ffdbd0",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#424842",
+                        "secondary-container": "#fe8c67",
+                        "surface-container-highest": "#e6e2dc",
+                        "on-secondary-fixed-variant": "#7e2c0f",
+                        "primary-container": "#4f6d54",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#cce9ff",
+                        "tertiary-container": "#426b84",
+                        "outline-variant": "#c2c8c0",
+                        "on-tertiary-fixed-variant": "#1f4b63",
+                        "surface-container": "#f1ede7",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f4f0ea",
+                        "surface-container-low": "#f7f3ed",
+                        "inverse-surface": "#31302d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#cbedce",
+                        "on-surface": "#1c1c18",
+                        "secondary": "#9d4224",
+                        "secondary-fixed-dim": "#ffb59e",
+                        "inverse-primary": "#aecfb1",
+                        "on-secondary-fixed": "#3a0b00",
+                        "surface-variant": "#e6e2dc",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#304d36",
+                        "on-primary": "#ffffff",
+                        "primary": "#37553d",
+                        "surface": "#fdf9f3",
+                        "primary-fixed-dim": "#aecfb1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1c1c18; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface selection:bg-secondary-fixed">
+<!-- TopAppBar -->
+<nav class="bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_20px_40px_rgba(28,28,24,0.06)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-fixed">
+<img alt="Shaeffer family crest" class="w-full h-full object-cover" data-alt="An updated Shaeffer family crest in gold and black on a deep red field, featuring an 'S', a cross, a staff, and an elegant gold cotton boll representing the South." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_DIivQ8g-ulamRqHr9J92N137fBWJPCF30XR5fv0-oxGEQwFRu4tFcceU9LB-z_6ESmrCg7ZHUSBlcdXCwafIt7v-jRnxqtC0Nt4pth-JEheebzy4txU9wViNam_09I_9t6BQ9wOKKE_QQmkvB5Y5WXbZ-SXZlw4uegAyNytY40a12SoSA4OPtQm8SqIDQu6g3YJ4xk2CD2kM5mwSQut-Jh0Vv94qQKlKrW71c6mHNhYtfdW87xB0lQHTJedN03MEhbbSv5YYc_o"/>
+</div>
+<h1 class="text-3xl font-serif italic tracking-tight text-emerald-900 dark:text-emerald-100">The Shaeffers</h1>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-800 transition-colors duration-300" href="#">Home</a>
+<a class="text-emerald-900 dark:text-emerald-100 font-bold border-b-2 border-orange-800" href="#">Journal</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-800 transition-colors duration-300" href="#">Adventures</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-orange-800 transition-colors duration-300" href="#">Roots</a>
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-100 active:scale-95 duration-150 ease-in-out">menu</button>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden">
+<button class="material-symbols-outlined text-emerald-900">menu</button>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-12">
+<!-- Hero Section: Editorial Asymmetry -->
+<header class="relative grid grid-cols-1 md:grid-cols-12 gap-8 mb-24 items-end">
+<div class="md:col-span-7 z-10">
+<span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-4 block">Archives: Vol. IV</span>
+<h2 class="text-5xl md:text-7xl font-serif italic text-primary leading-tight mb-6">Nurturing Minds <br/> &amp; Rooting Faith.</h2>
+<p class="text-lg text-on-surface-variant max-w-lg leading-relaxed font-light">A digital chronicle of our days in the sun-drenched schoolroom, where every lesson is an adventure and every book is a doorway to the Divine.</p>
+</div>
+<div class="md:col-span-5 relative group">
+<div class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-700">
+<img alt="Homeschooling Setup" class="w-full h-full object-cover" data-alt="The Shaeffer family together in their van, smiling and ready for a day of learning and adventure." src="https://lh3.googleusercontent.com/aida/ADBb0ujUaGsTXOU7SzA9BnH6Gzfgx8XPsnplQ4ns-Ck4bEQq4qUVce_CKp3xRsXwB7LzyVQHMtGxQ0loZoeWzfeaweOeHp_-ct2OmU41s_RobqlrmSB8iTCzvTeyM4GhK-FwOqMzzjv10oS_VGBX-wb0FV3ILsqaW0cI6kIiLK_-fAj-RMYvVue5Xef54bSuqO1nPo-xWIU3OgAusXaNdQ8Dm48gEm_l34Nx6-GSCsJ_T_kSeuE9Bwnc8kgQUoktuf5jijU35O7XkvGkNw"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary text-on-secondary px-6 py-8 rounded-lg shadow-xl hidden md:block">
+<span class="font-serif italic text-2xl">"The heart of education is the education of the heart."</span>
+</div>
+</div>
+</header>
+<!-- Bento Grid: Recent Activities -->
+<section class="mb-32">
+<div class="flex justify-between items-baseline mb-12">
+<h3 class="text-3xl font-serif text-primary">Recent Chronicle</h3>
+<a class="text-secondary font-bold text-sm flex items-center gap-2 hover:gap-4 transition-all duration-300" href="#">
+                    Explore All Journal Entries <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Activity 1: Large Featured -->
+<article class="md:col-span-2 md:row-span-2 bg-surface-container-lowest p-6 rounded-2xl flex flex-col justify-between group">
+<div>
+<div class="aspect-video rounded-xl overflow-hidden mb-6 relative">
+<img alt="Nature Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The Shaeffer children excited and engaged during a night-time learning excursion." src="https://lh3.googleusercontent.com/aida/ADBb0uhsg9-RZA8t66tOJqzx4ygVyxwv_e0ev23cU18w_p9gsS-l2ttFQWnzwjnUBYgWQtaUOS6IBhTqOLFaPtvKg4Dk3h1edKqRSBMn-23k-KPICSf9bsuuvLyR4S6qIJMuaDaua8GnwzpwxtVMx8wAHdx_qYhXmI-vdcubofuIvHHpFx1Q9aAK5HvDkLfa7rxtSp7b6Mn-7ihsM1A6HRmBxrRdSOh2qzxjFhjE9sdohW7eg15HZeGlksTG_RZKV9HdicThhJjZ6qZTYA"/>
+<div class="absolute top-4 left-4 bg-tertiary/90 backdrop-blur text-on-tertiary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-tighter">Nature Study</div>
+</div>
+<h4 class="text-2xl font-serif text-emerald-900 mb-4">The Monarch Migration: A Lesson in Patience</h4>
+<p class="text-on-surface-variant line-clamp-3 mb-6">This week we tracked the southern migration of the Monarch butterflies through our own backyard meadow. The boys learned the delicate balance of the Alabama ecosystem...</p>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<span class="text-xs text-stone-500">October 14, 2024</span>
+<button class="text-emerald-800 font-bold text-sm">Read More</button>
+</div>
+</article>
+<!-- Activity 2: Medium -->
+<article class="md:col-span-2 bg-surface-container-low p-6 rounded-2xl flex gap-6 items-center">
+<div class="w-1/3 aspect-square rounded-xl overflow-hidden bg-stone-200">
+<img alt="Geography Project" class="w-full h-full object-cover" data-alt="Hands mapping out a large vintage-style paper map with watercolor paints and ink calligraphy on a rustic wooden floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbTKBqU-jTXoSdW1FYK5oPFDyl3DRdHFnyEs5-jsyvkBUqnK8N5SlYI9qnp3TfGmsAIYWsbFV_mUrXd5vIa7bf7WKXM8WP-OcjB8AhIuoYWZCWgLsfm9VmaYlUmmWUxEiWTSO0LxEobXXioyQAPewWFyJN1jFezTU4PpLxwBXGQXc1z21sWYsE0dqHMI2uwXhuijbzC6cE3wQbLqS_Rp9FdTBISN9SsuyOkkBm3FOElQmIrJI8H23J2RhDkBC1c6nj_JWxQd6q96c"/>
+</div>
+<div class="w-2/3">
+<span class="text-orange-800 font-bold text-[10px] uppercase tracking-widest mb-1 block">Geography</span>
+<h4 class="text-lg font-serif text-emerald-900 leading-tight">Mapping the Old World: Watercolor Cartography</h4>
+<p class="text-sm text-stone-600 mt-2 line-clamp-2">Learning the trade routes of the 17th century through pigment and parchment.</p>
+</div>
+</article>
+<!-- Activity 3: Small Card -->
+<article class="bg-primary text-on-primary p-8 rounded-2xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl mb-4">menu_book</span>
+<div>
+<h4 class="text-xl font-serif italic mb-2">Shaeffer Book Nook</h4>
+<p class="text-xs text-primary-fixed leading-relaxed">Our curated reading list for the Autumn term, focused on Southern heritage and biblical grit.</p>
+</div>
+<button class="mt-8 bg-primary-fixed text-on-primary-fixed py-2 rounded-lg font-bold text-sm">View List</button>
+</article>
+<!-- Activity 4: Small Image -->
+<div class="rounded-2xl overflow-hidden shadow-inner relative group">
+<img alt="Morning Devotion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of an open Bible, a cup of coffee with steam rising, and a warm morning light hitting a rustic wooden surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhPUrVDo6MjlynJtUVqXm4JH1VrHK9f02WnAPRH4yANko-NG5UBru09E75Tnka9F8eib2ScOGOsObyejNb4CQzdYBY5hSb4oWln2QaJ8wjpeHgk9BLDo9i2Vsarz03f8YxQ96waCqKWyQJGls2bJsU-_1_S72tI_179h63tK0pgV9ZYXgeQselDi1he20ZoHTlqOQZ1uNgdl60ch_sOHAcxTFeRvh94b21cifYsbCY_y7E6lJ2-1_bBXOFlmVqlc_PTU-ewv1wrVY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+<p class="text-white font-serif italic">Morning Liturgies</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Heirloom Ribbon Section -->
+<section class="relative py-20 mb-32">
+<div class="absolute inset-0 bg-surface-container-high rounded-3xl -rotate-1 scale-105"></div>
+<div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+<div class="h-px w-24 bg-secondary mx-auto mb-10"></div>
+<h3 class="text-4xl md:text-5xl font-serif italic text-primary leading-tight mb-8">"Education is not the filling of a pail, but the lighting of a fire."</h3>
+<p class="text-secondary font-bold uppercase tracking-[0.2em] text-sm">William Butler Yeats</p>
+<div class="h-px w-24 bg-secondary mx-auto mt-10"></div>
+</div>
+</section>
+<!-- Curriculum Review: The Archive Layout -->
+<section class="mb-32">
+<h3 class="text-4xl font-serif text-emerald-900 mb-12 text-center">The Curriculum Archives</h3>
+<div class="space-y-12">
+<!-- Review Row 1 -->
+<div class="group grid grid-cols-1 md:grid-cols-12 items-center border-b border-outline-variant/30 pb-12 hover:bg-surface-container-low transition-colors rounded-xl px-4">
+<div class="md:col-span-2 text-stone-400 font-bold text-lg">01.</div>
+<div class="md:col-span-3">
+<h4 class="text-xl font-serif text-primary">Ambleside Online</h4>
+<p class="text-xs text-secondary font-semibold">Charlotte Mason Method</p>
+</div>
+<div class="md:col-span-5 text-on-surface-variant text-sm leading-relaxed pr-8 py-4 md:py-0">
+                        "An exhaustive, living-books based curriculum that has fundamentally changed how we view the 'feast' of education. Challenging, but deeply rewarding for our older boys."
+                    </div>
+<div class="md:col-span-2 flex justify-end">
+<div class="flex gap-1 text-orange-800">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Review Row 2 -->
+<div class="group grid grid-cols-1 md:grid-cols-12 items-center border-b border-outline-variant/30 pb-12 hover:bg-surface-container-low transition-colors rounded-xl px-4">
+<div class="md:col-span-2 text-stone-400 font-bold text-lg">02.</div>
+<div class="md:col-span-3">
+<h4 class="text-xl font-serif text-primary">The Good &amp; The Beautiful</h4>
+<p class="text-xs text-secondary font-semibold">Language Arts &amp; Math</p>
+</div>
+<div class="md:col-span-5 text-on-surface-variant text-sm leading-relaxed pr-8 py-4 md:py-0">
+                        "The aesthetics of their materials are unmatched. Our youngest actually looks forward to her grammar lessons because of the classic art integrations."
+                    </div>
+<div class="md:col-span-2 flex justify-end">
+<div class="flex gap-1 text-orange-800">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+</div>
+</div>
+<!-- Review Row 3 -->
+<div class="group grid grid-cols-1 md:grid-cols-12 items-center border-b border-outline-variant/30 pb-12 hover:bg-surface-container-low transition-colors rounded-xl px-4">
+<div class="md:col-span-2 text-stone-400 font-bold text-lg">03.</div>
+<div class="md:col-span-3">
+<h4 class="text-xl font-serif text-primary">Apologia Science</h4>
+<p class="text-xs text-secondary font-semibold">Creation-Based Discovery</p>
+</div>
+<div class="md:col-span-5 text-on-surface-variant text-sm leading-relaxed pr-8 py-4 md:py-0">
+                        "Rich in detail and unapologetically faith-centered. The hands-on experiments are simple enough for home but rigorous enough for real understanding."
+                    </div>
+<div class="md:col-span-2 flex justify-end">
+<div class="flex gap-1 text-orange-800">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Subscribe: Surface Layering -->
+<section class="bg-surface-container-high rounded-[3rem] p-8 md:p-16 mb-24 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+<div>
+<h4 class="text-4xl font-serif text-emerald-950 mb-4">Join Our Homestead Journey</h4>
+<p class="text-emerald-900/70 text-lg">Weekly dispatches from the Shaeffer Schoolroom, delivered with grace to your inbox.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm">
+<form class="flex flex-col md:flex-row gap-3">
+<input class="flex-grow bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary text-on-surface" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold hover:bg-emerald-900 transition-colors">Subscribe</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 full-width py-16 px-8 mt-24 shadow-none">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto w-full">
+<div>
+<h2 class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100 mb-6">The Shaeffer Archivist</h2>
+<p class="text-stone-500 max-w-sm mb-8 font-sans text-sm tracking-tight">© 2024 The Shaeffer Archivist. Cultivating growth and faith in Alabama. Preserving the legacy of learning, one day at a time.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-emerald-800">retweet</span>
+<span class="material-symbols-outlined text-emerald-800">mail</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h5 class="font-bold text-emerald-950 dark:text-emerald-50 mb-4 uppercase text-xs tracking-widest">Navigation</h5>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-emerald-800 text-sm font-sans tracking-tight hover:underline decoration-orange-800/30 underline-offset-4 transition-opacity duration-500" href="#">Home</a></li>
+<li><a class="text-orange-800 font-semibold text-sm font-sans tracking-tight underline decoration-orange-800/30 underline-offset-4" href="#">Journal</a></li>
+<li><a class="text-stone-500 hover:text-emerald-800 text-sm font-sans tracking-tight hover:underline decoration-orange-800/30 underline-offset-4 transition-opacity duration-500" href="#">Adventures</a></li>
+<li><a class="text-stone-500 hover:text-emerald-800 text-sm font-sans tracking-tight hover:underline decoration-orange-800/30 underline-offset-4 transition-opacity duration-500" href="#">Roots</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-emerald-950 dark:text-emerald-50 mb-4 uppercase text-xs tracking-widest">Legal</h5>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-emerald-800 text-sm font-sans tracking-tight hover:underline decoration-orange-800/30 underline-offset-4 transition-opacity duration-500" href="#">Privacy</a></li>
+<li><a class="text-stone-500 hover:text-emerald-800 text-sm font-sans tracking-tight hover:underline decoration-orange-800/30 underline-offset-4 transition-opacity duration-500" href="#">Terms of Use</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-stone-50 dark:bg-stone-900 docked full-width rounded-t-3xl shadow-[0_-10px_30px_rgba(28,28,24,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:bg-stone-200/50 haptic-feedback scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-serif text-[11px] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-orange-100/50 dark:bg-orange-900/30 text-orange-900 dark:text-orange-200 rounded-xl px-4 py-1 haptic-feedback scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-serif text-[11px] tracking-wide">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:bg-stone-200/50 haptic-feedback scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">landscape</span>
+<span class="font-serif text-[11px] tracking-wide">Adventures</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-1 hover:bg-stone-200/50 haptic-feedback scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">church</span>
+<span class="font-serif text-[11px] tracking-wide">Roots</span>
+</a>
+</nav>
+</body></html>
