@@ -76,6 +76,24 @@
     }
     .project-card--reformed { border-top: 3px solid var(--c-primary); }
     .project-card--cristo   { border-top: 3px solid var(--c-secondary); }
+    .project-card__thumb {
+      width: calc(100% + 5rem);
+      margin: -2.5rem -2.5rem 2rem;
+      height: 180px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--c-outline-variant);
+    }
+    .project-card__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-card__thumb img {
+      transform: scale(1.03);
+    }
   </style>
 </head>
 <body>
@@ -113,6 +131,9 @@
     <div class="projects-grid">
 
       <a href="https://thefamilyreformed.com/" target="_blank" rel="noopener" class="project-card project-card--reformed">
+        <div class="project-card__thumb">
+          <img src="images/thefamilyreformed.png" alt="The Family Reformed website screenshot" loading="lazy">
+        </div>
         <span class="project-card__eyebrow">Theology &amp; Family</span>
         <h2 class="project-card__title">The Family Reformed</h2>
         <p class="project-card__body">A resource for Christian families committed to raising the next generation in the fear and admonition of the Lord. Writing and reflections on faith, doctrine, and discipleship at home.</p>
@@ -123,6 +144,9 @@
       </a>
 
       <a href="https://cristocreativetech.com/" target="_blank" rel="noopener" class="project-card project-card--cristo">
+        <div class="project-card__thumb">
+          <img src="images/cristocreativetech.png" alt="Cristo Creative Tech website screenshot" loading="lazy">
+        </div>
         <span class="project-card__eyebrow">Web Design &amp; Development</span>
         <h2 class="project-card__title">Cristo Creative Tech</h2>
         <p class="project-card__body">A web studio and DevOps services team building beautiful, purposeful websites for families, ministries, and small businesses. This site was designed and built by Cristo Creative Tech.</p>

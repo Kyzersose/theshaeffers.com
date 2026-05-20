@@ -11,17 +11,18 @@
   <meta property="og:url" content="https://theshaeffers.com">
   <meta property="og:title" content="The Shaeffers | Faith &amp; Family in Alabama">
   <meta property="og:description" content="Matt and Sarah Shaeffer are raising their family in the heart of Alabama — rooted in Christian faith, homeschooling, and Southern community.">
-  <meta property="og:image" content="https://theshaeffers.com/images/mattandsarah.jpg">
+  <meta property="og:image" content="https://theshaeffers.com/images/mattandsarah.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Shaeffers | Faith &amp; Family in Alabama">
   <meta name="twitter:description" content="Matt and Sarah Shaeffer raising their family in Alabama, rooted in faith.">
-  <meta name="twitter:image" content="https://theshaeffers.com/images/mattandsarah.jpg">
+  <meta name="twitter:image" content="https://theshaeffers.com/images/mattandsarah.webp">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"The Shaeffers","url":"https://theshaeffers.com","description":"The Shaeffer family — faith, homeschooling, and Southern life in Deatsville, Alabama."}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -347,25 +348,75 @@
     }
     .site-credit a:hover { color: rgba(255,255,255,0.62); }
 
+    /* ─── Bottom Nav ────────────────────────────────── */
+    .bottom-nav-home {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 60;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0.6rem 1rem 1.4rem;
+      background: rgba(14, 12, 9, 0.86);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .bn-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.3rem 1rem;
+      border-radius: 0.5rem;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .bn-item .material-symbols-outlined {
+      font-size: 1.35rem;
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .bn-item.active {
+      color: var(--clay);
+    }
+    .bn-item:hover { color: rgba(255,255,255,0.8); }
+
     /* ─── Mobile ──────────────────────────────────── */
     @media (max-width: 767px) {
+      /* Switch vignette from left-grad to bottom-grad so images are visible */
+      .vignette {
+        background: linear-gradient(
+          to top,
+          rgba(14, 12, 9, 0.82) 0%,
+          rgba(14, 12, 9, 0.35) 38%,
+          transparent 62%
+        );
+      }
       .details {
         top: auto !important;
-        bottom: 110px;
+        bottom: 90px;
         left: 24px;
         right: 24px;
         max-width: none;
       }
       .details .title-1, .details .title-2 {
-        font-size: 52px;
+        font-size: 46px;
       }
       .details .title-box-1, .details .title-box-2 {
-        height: 58px;
+        height: 52px;
       }
-      .details .desc { font-size: 13px; max-width: 100%; }
+      .details .desc { font-size: 12px; max-width: 100%; }
       .nav-links { display: none; }
-      .pagination .progress-sub-container { display: none; }
-      .pagination .slide-numbers { display: none; }
+      .bottom-nav-home { display: flex; }
+      /* Hide pagination arrows on mobile — carousel auto-advances */
+      .pagination { display: none !important; }
     }
   </style>
 </head>
@@ -435,28 +486,28 @@
       title:       'WHO WE',
       title2:      'ARE',
       description: 'Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and with a generational mindset.',
-      image:       './images/mattandsarah.jpg',
+      image:       './images/mattandsarah.webp',
     },
     {
       section:     'Faith & Family',
       title:       'OUR',
       title2:      'FAITH',
       description: 'A family centered on God. We pray together, we go to church together, we practice faimly worship together, and we sing together. Christ is KING!',
-      image:       './images/church.jpg',
+      image:       './images/church.webp',
     },
     {
       section:     'Learning at Home',
       title:       'HOME',
       title2:      'SCHOOL',
       description: 'We believe Christian parents are called to homeschool their children. We are to personally train and educate our children in the fear and admonition of the Lord. Are family is blessed THROUGH homeschooling.',
-      image:       './images/tree-kids.jpg',
+      image:       './images/tree-kids.webp',
     },
     {
       section:     'Sweet Home Alabama',
       title:       'LIFE IN',
       title2:      'ALABAMA',
       description: "Alabama is an great place to raise a family. Good people, great trails and beaches, close to family, great food! Known for hospitality and down to earth values. Christians are taking back our culture and our politics here and we love it.",
-      image:       './images/cow.jpg',
+      image:       './images/cow.webp',
     },
   ];
 
@@ -758,5 +809,21 @@
 
   Promise.all(data.map(d => loadImage(d.image))).then(init);
   </script>
+
+  <nav class="bottom-nav-home" aria-label="Mobile navigation">
+    <a href="index.html" class="bn-item active">
+      <span class="material-symbols-outlined" aria-hidden="true">home</span>
+      <span>Home</span>
+    </a>
+    <a href="projects.html" class="bn-item">
+      <span class="material-symbols-outlined" aria-hidden="true">folder_open</span>
+      <span>Projects</span>
+    </a>
+    <a href="curriculum.html" class="bn-item">
+      <span class="material-symbols-outlined" aria-hidden="true">school</span>
+      <span>Curriculum</span>
+    </a>
+  </nav>
+
 </body>
 </html>
