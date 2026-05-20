@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | The Shaeffers</title>
+  <meta name="description" content="The Shaeffer family's ongoing projects — from theological writing to creative web work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .projects-grid {
+      max-width: 1280px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; padding: 0 3rem; }
+    }
+    .project-card {
+      display: block;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: var(--c-surface-low);
+      border: 1px solid var(--c-outline-variant);
+      padding: 2.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(28,28,24,0.10);
+    }
+    .project-card__eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-secondary);
+      margin-bottom: 1rem;
+    }
+    .project-card__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-style: italic;
+      color: var(--c-primary);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .project-card__body {
+      color: var(--c-on-surface-variant);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .project-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--c-secondary);
+    }
+    .project-card__link .material-symbols-outlined {
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+    .project-card:hover .project-card__link .material-symbols-outlined {
+      transform: translateX(4px);
+    }
+    .project-card--reformed { border-top: 3px solid var(--c-primary); }
+    .project-card--cristo   { border-top: 3px solid var(--c-secondary); }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <span class="nav-title">The Shaeffers</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="curriculum.html">Curriculum</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="hero-interior">
+      <div class="hero-interior-grid">
+        <div>
+          <span class="hero-interior__eyebrow">Our Work</span>
+          <h1 class="hero-interior__headline">Projects</h1>
+          <p class="hero-interior__sub">Beyond the homestead — the writing, building, and creating that the Shaeffer family pours its energy into between the seasons.</p>
+        </div>
+        <div>
+          <div class="hero-quote-card">
+            <p>"Whatever you do, work at it with all your heart, as working for the Lord." — Colossians 3:23</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <a href="https://thefamilyreformed.com/" target="_blank" rel="noopener" class="project-card project-card--reformed">
+        <span class="project-card__eyebrow">Theology &amp; Family</span>
+        <h2 class="project-card__title">The Family Reformed</h2>
+        <p class="project-card__body">A resource for Christian families committed to raising the next generation in the fear and admonition of the Lord. Writing and reflections on faith, doctrine, and discipleship at home.</p>
+        <span class="project-card__link">
+          Visit thefamilyreformed.com
+          <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+        </span>
+      </a>
+
+      <a href="https://cristocreativetech.com/" target="_blank" rel="noopener" class="project-card project-card--cristo">
+        <span class="project-card__eyebrow">Web Design &amp; Development</span>
+        <h2 class="project-card__title">Cristo Creative Tech</h2>
+        <p class="project-card__body">A boutique web studio building beautiful, purposeful websites for families, ministries, and small businesses. This site was designed and built by Cristo Creative Tech.</p>
+        <span class="project-card__link">
+          Visit cristocreativetech.com
+          <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+        </span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-title">The Shaeffers</span>
+        <p class="footer-copy">© 2025 The Shaeffers · Deatsville, Alabama · Faith, Family &amp; Southern Life</p>
+        <p class="footer-copy" style="margin-top:0.5rem;font-size:0.75rem;">Site by <a href="https://cristocreativetech.com" target="_blank" rel="noopener" style="color:var(--c-secondary)">Cristo Creative Tech</a></p>
+        <div class="footer-social">
+          <a href="mailto:matt@theshaeffers.com" aria-label="Email us">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <span class="footer-nav-heading">Navigation</span>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="curriculum.html">Curriculum</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="bottom-nav-item">
+      <span class="material-symbols-outlined" aria-hidden="true">home</span>
+      <span>Home</span>
+    </a>
+    <a href="projects.html" class="bottom-nav-item active">
+      <span class="material-symbols-outlined" aria-hidden="true">folder_open</span>
+      <span>Projects</span>
+    </a>
+    <a href="curriculum.html" class="bottom-nav-item">
+      <span class="material-symbols-outlined" aria-hidden="true">school</span>
+      <span>Curriculum</span>
+    </a>
+  </nav>
+
+  <script src="main.js"></script>
+</body>
+</html>

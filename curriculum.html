@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum | The Shaeffers</title>
+  <meta name="description" content="The Shaeffer family's approach to homeschooling — classical education, Christian worldview, and the Patriot Gap Year program.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .curriculum-section {
+      max-width: 1280px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .curriculum-section { padding: 0 3rem; }
+    }
+    .curriculum-section__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-style: italic;
+      color: var(--c-primary);
+      margin-bottom: 1rem;
+    }
+    .curriculum-section__sub {
+      font-size: 1rem;
+      color: var(--c-on-surface-variant);
+      line-height: 1.8;
+      max-width: 60ch;
+      margin-bottom: 2.5rem;
+    }
+    .curriculum-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 640px)  { .curriculum-pillars { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .curriculum-pillars { grid-template-columns: repeat(4, 1fr); } }
+    .pillar-card {
+      background: var(--c-surface-low);
+      border: 1px solid var(--c-outline-variant);
+      border-radius: 0.875rem;
+      padding: 1.75rem;
+    }
+    .pillar-card__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.6rem;
+      background: var(--c-primary-container);
+      color: var(--c-primary);
+      margin-bottom: 1rem;
+    }
+    .pillar-card__icon .material-symbols-outlined { font-size: 1.4rem; }
+    .pillar-card__title {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--c-primary);
+      margin-bottom: 0.5rem;
+    }
+    .pillar-card__body {
+      font-size: 0.9rem;
+      color: var(--c-on-surface-variant);
+      line-height: 1.7;
+    }
+
+    .patriot-banner {
+      background: linear-gradient(135deg, var(--c-primary) 0%, #1e3a24 100%);
+      border-radius: 1.25rem;
+      padding: 3rem 2rem;
+      color: #fff;
+      margin-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .patriot-banner::before {
+      content: '';
+      position: absolute;
+      top: -4rem; right: -4rem;
+      width: 16rem; height: 16rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .patriot-banner__eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.75rem;
+    }
+    .patriot-banner__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .patriot-banner__body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+      max-width: 55ch;
+      margin-bottom: 2rem;
+    }
+    .patriot-banner__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      padding: 0.65rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.2s ease;
+      text-decoration: none;
+    }
+    .patriot-banner__link:hover { background: rgba(255,255,255,0.2); }
+    .patriot-banner__link .material-symbols-outlined { font-size: 1rem; }
+
+    .adv-outro { padding: 3rem 1.5rem 5rem; }
+    @media (min-width: 768px) { .adv-outro { padding: 3rem 3rem 6rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <span class="nav-title">The Shaeffers</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="curriculum.html" class="active">Curriculum</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="hero-interior">
+      <div class="hero-interior-grid">
+        <div>
+          <span class="hero-interior__eyebrow">Learning at Home</span>
+          <h1 class="hero-interior__headline">Curriculum</h1>
+          <p class="hero-interior__sub">Education in the Shaeffer home is not confined to a desk. It spills into the garden, the kitchen, the barn, and the pages of great books — shaped by a classical, Christ-centered approach.</p>
+        </div>
+        <div>
+          <div class="hero-quote-card">
+            <p>"Train up a child in the way he should go; even when he is old he will not depart from it." — Proverbs 22:6</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <div class="curriculum-section">
+      <h2 class="curriculum-section__heading">Our Approach</h2>
+      <p class="curriculum-section__sub">We believe education is the cultivation of a whole person — mind, character, and soul. Every subject is taught through the lens of a Biblical worldview.</p>
+
+      <div class="curriculum-pillars">
+        <div class="pillar-card">
+          <div class="pillar-card__icon">
+            <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+          </div>
+          <h3 class="pillar-card__title">Classical Foundations</h3>
+          <p class="pillar-card__body">Grammar, logic, and rhetoric — the trivium provides the backbone of how our children learn to think, reason, and communicate.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-card__icon">
+            <span class="material-symbols-outlined" aria-hidden="true">church</span>
+          </div>
+          <h3 class="pillar-card__title">Biblical Worldview</h3>
+          <p class="pillar-card__body">Scripture anchors every subject. History, science, literature — all of it is read through the story God is telling in creation and redemption.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-card__icon">
+            <span class="material-symbols-outlined" aria-hidden="true">nature</span>
+          </div>
+          <h3 class="pillar-card__title">Living Education</h3>
+          <p class="pillar-card__body">Real skills, real work, real places. Our children learn alongside us in the garden, the kitchen, and the community.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-card__icon">
+            <span class="material-symbols-outlined" aria-hidden="true">history_edu</span>
+          </div>
+          <h3 class="pillar-card__title">American Heritage</h3>
+          <p class="pillar-card__body">We study the founding, the Constitution, and the Christian roots of American liberty — raising citizens who understand and love their country.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patriot Gap Year -->
+    <div class="curriculum-section">
+      <div class="patriot-banner">
+        <span class="patriot-banner__eyebrow">Gap Year Program</span>
+        <h2 class="patriot-banner__title">Patriot Gap Year</h2>
+        <p class="patriot-banner__body">An immersive year-long program for young men and women ready to go deep — studying the American founding, constitutional law, and the Christian heritage of liberty before stepping into adult life. Built on the conviction that the next generation must understand what they're inheriting before they can defend and pass it on.</p>
+        <a href="https://patriotacademy.com" target="_blank" rel="noopener" class="patriot-banner__link">
+          Learn more at Patriot Academy
+          <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Outro -->
+    <div class="adv-outro">
+      <div class="outro-card">
+        <h2 class="outro-card__title">Want to see our projects?</h2>
+        <p class="outro-card__sub">Alongside the schoolroom, the Shaeffers are writing, building, and creating. Come see what we've been working on.</p>
+        <a href="projects.html" class="btn-primary">
+          View Projects
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-title">The Shaeffers</span>
+        <p class="footer-copy">© 2025 The Shaeffers · Deatsville, Alabama · Faith, Family &amp; Southern Life</p>
+        <p class="footer-copy" style="margin-top:0.5rem;font-size:0.75rem;">Site by <a href="https://cristocreativetech.com" target="_blank" rel="noopener" style="color:var(--c-secondary)">Cristo Creative Tech</a></p>
+        <div class="footer-social">
+          <a href="mailto:matt@theshaeffers.com" aria-label="Email us">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <span class="footer-nav-heading">Navigation</span>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="curriculum.html">Curriculum</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="bottom-nav-item">
+      <span class="material-symbols-outlined" aria-hidden="true">home</span>
+      <span>Home</span>
+    </a>
+    <a href="projects.html" class="bottom-nav-item">
+      <span class="material-symbols-outlined" aria-hidden="true">folder_open</span>
+      <span>Projects</span>
+    </a>
+    <a href="curriculum.html" class="bottom-nav-item active">
+      <span class="material-symbols-outlined" aria-hidden="true">school</span>
+      <span>Curriculum</span>
+    </a>
+  </nav>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Shaeffers | Cultivating Faith, Harvesting Joy</title>
-  <meta name="description" content="A digital archive of the Shaeffer family's journey through homeschooling, homesteading, and the quiet beauty of Southern life.">
+  <title>The Shaeffers | Faith &amp; Family in Alabama</title>
+  <meta name="description" content="Matt and Sarah Shaeffer are raising their family in the heart of Alabama — rooted in Christian faith, homeschooling, and Southern community.">
+  <meta name="keywords" content="Shaeffer family, Alabama family, Christian homeschool, Deatsville Alabama, faith family Southern life">
+  <link rel="canonical" href="https://theshaeffers.com">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theshaeffers.com">
+  <meta property="og:title" content="The Shaeffers | Faith &amp; Family in Alabama">
+  <meta property="og:description" content="Matt and Sarah Shaeffer are raising their family in the heart of Alabama — rooted in Christian faith, homeschooling, and Southern community.">
+  <meta property="og:image" content="https://theshaeffers.com/images/mattandsarah.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Shaeffers | Faith &amp; Family in Alabama">
+  <meta name="twitter:description" content="Matt and Sarah Shaeffer raising their family in Alabama, rooted in faith.">
+  <meta name="twitter:image" content="https://theshaeffers.com/images/mattandsarah.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"The Shaeffers","url":"https://theshaeffers.com","description":"The Shaeffer family — faith, homeschooling, and Southern life in Deatsville, Alabama."}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -151,55 +165,6 @@
       color: var(--text-mid);
       font-weight: 300;
       max-width: 420px;
-    }
-
-    .details .cta {
-      margin-top: 26px;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .details .cta .btn-primary {
-      border: none;
-      background: var(--clay);
-      height: 40px;
-      border-radius: 2px;
-      color: #fff;
-      padding: 0 26px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-family: 'DM Sans', sans-serif;
-      cursor: pointer;
-      transition: background 0.22s ease, transform 0.18s ease;
-    }
-
-    .details .cta .btn-primary:hover {
-      background: var(--clay-dark);
-      transform: translateY(-1px);
-    }
-
-    .details .cta .btn-ghost {
-      border: 1px solid rgba(255,255,255,0.2);
-      background: transparent;
-      height: 40px;
-      border-radius: 2px;
-      color: var(--text-mid);
-      padding: 0 22px;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-family: 'DM Sans', sans-serif;
-      cursor: pointer;
-      transition: all 0.22s ease;
-    }
-
-    .details .cta .btn-ghost:hover {
-      border-color: rgba(255,255,255,0.42);
-      color: var(--text-hi);
     }
 
     /* ─── Navigation ──────────────────────────────── */
@@ -363,6 +328,45 @@
       background: var(--dark);
       z-index: 100;
     }
+
+    /* ─── Site credit ─────────────────────────────── */
+    .site-credit {
+      position: fixed;
+      bottom: 14px; right: 22px;
+      z-index: 22;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.22);
+      pointer-events: none;
+    }
+    .site-credit a {
+      color: rgba(255,255,255,0.32);
+      pointer-events: auto;
+      transition: color 0.2s;
+    }
+    .site-credit a:hover { color: rgba(255,255,255,0.62); }
+
+    /* ─── Mobile ──────────────────────────────────── */
+    @media (max-width: 767px) {
+      .details {
+        top: auto !important;
+        bottom: 110px;
+        left: 24px;
+        right: 24px;
+        max-width: none;
+      }
+      .details .title-1, .details .title-2 {
+        font-size: 52px;
+      }
+      .details .title-box-1, .details .title-box-2 {
+        height: 58px;
+      }
+      .details .desc { font-size: 13px; max-width: 100%; }
+      .nav-links { display: none; }
+      .pagination .progress-sub-container { display: none; }
+      .pagination .slide-numbers { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -377,9 +381,8 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="journal.html">Journal</a>
-      <a href="adventures.html">Adventures</a>
-      <a href="roots.html">Roots</a>
+      <a href="projects.html">Projects</a>
+      <a href="curriculum.html">Curriculum</a>
     </div>
   </nav>
 
@@ -387,27 +390,21 @@
 
   <!-- Details: even (initialized with card 0 data) -->
   <div class="details" id="details-even">
-    <div class="place-box"><div class="text">The Shaeffers · Prattville, Alabama</div></div>
+    <div class="place-box"><div class="text">The Shaeffers · Deatsville, Alabama</div></div>
     <div class="title-box-1"><div class="title-1">WHO WE</div></div>
     <div class="title-box-2"><div class="title-2">ARE</div></div>
-    <div class="desc">Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and the kind of love that grows richer with every passing season.</div>
-    <div class="cta">
-      <button class="btn-primary">Meet the Family</button>
-      <button class="btn-ghost">Our Story</button>
-    </div>
+    <div class="desc">Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and a generational mindset.</div>
   </div>
 
   <!-- Details: odd (content swapped in before shown) -->
   <div class="details" id="details-odd">
-    <div class="place-box"><div class="text">The Shaeffers · Prattville, Alabama</div></div>
+    <div class="place-box"><div class="text">The Shaeffers · Deatsville, Alabama</div></div>
     <div class="title-box-1"><div class="title-1">WHO WE</div></div>
     <div class="title-box-2"><div class="title-2">ARE</div></div>
-    <div class="desc">Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and the kind of love that grows richer with every passing season.</div>
-    <div class="cta">
-      <button class="btn-primary">Meet the Family</button>
-      <button class="btn-ghost">Our Story</button>
-    </div>
+    <div class="desc">Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and a generational mindset.</div>
   </div>
+
+  <div class="site-credit">Site by <a href="https://cristocreativetech.com" target="_blank" rel="noopener">Cristo Creative Tech</a></div>
 
   <div class="pagination" id="pagination">
     <div class="arrow arrow-left">
@@ -434,11 +431,10 @@
   <script>
   const data = [
     {
-      section:     'The Shaeffers · Prattville, Alabama',
+      section:     'The Shaeffers · Deatsville, Alabama',
       title:       'WHO WE',
       title2:      'ARE',
-      description: 'Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and the kind of love that grows richer with every passing season.',
-      cta:         'Meet the Family',
+      description: 'Matt and Sarah Shaeffer are raising their family in the heart of Alabama, building a life grounded in faith, hard work, and a generational mindset.',
       image:       './images/mattandsarah.jpg',
     },
     {
@@ -446,7 +442,6 @@
       title:       'OUR',
       title2:      'FAITH',
       description: 'Christ is the foundation of everything we do — from morning devotions at the kitchen table to the way we raise our children, love our neighbors, and plant our roots in this Alabama soil.',
-      cta:         'Our Testimony',
       image:       './images/church.jpg',
     },
     {
@@ -454,7 +449,6 @@
       title:       'HOME',
       title2:      'SCHOOL',
       description: 'Education in our home spills off the kitchen table and into the garden, the barn, and the great Alabama sky. Every season is a teacher and every day a new adventure.',
-      cta:         'Our Approach',
       image:       './images/tree-kids.jpg',
     },
     {
@@ -462,8 +456,7 @@
       title:       'LIFE IN',
       title2:      'ALABAMA',
       description: "We've planted our roots deep in Alabama's red clay, finding beauty in the slow, intentional rhythms of Southern life — long summers, church bells, and neighbors who become family.",
-      cta:         'Our Corner of Dixie',
-      image:       './images/prattville.jpg',
+      image:       './images/cow.jpg',
     },
   ];
 
@@ -477,6 +470,8 @@
   const GAP        = 36;
   const NUM_SZ     = 44;
 
+  const isMobile = window.innerWidth < 768;
+
   let order       = [0, 1, 2, 3];
   let detailsEven = true;
   let offsetTop, offsetLeft;
@@ -486,24 +481,17 @@
   const content = (i) => `#card-content-${i}`;
   const numEl   = (i) => `#slide-item-${i}`;
 
-  function tween(target, dur, props) {
-    return new Promise(resolve =>
-      gsap.to(target, { ...props, duration: dur, onComplete: resolve })
-    );
-  }
-
   function updateDetails(sel, idx) {
     const d = data[idx];
     document.querySelector(`${sel} .place-box .text`).textContent = d.section;
     document.querySelector(`${sel} .title-1`).textContent         = d.title;
     document.querySelector(`${sel} .title-2`).textContent         = d.title2;
     document.querySelector(`${sel} .desc`).textContent            = d.description;
-    document.querySelector(`${sel} .btn-primary`).textContent     = d.cta;
   }
 
   /* ── Build DOM ────────────────────────────────────────── */
   $('demo').innerHTML = data.map((d, i) =>
-    `<div class="card" id="card${i}" style="background-image:url('${d.image}')"></div>` +
+    `<div class="card" id="card${i}" data-idx="${i}" style="background-image:url('${d.image}')"></div>` +
     `<div class="card-content" id="card-content-${i}">
       <div class="content-bar"></div>
       <div class="content-section">${d.section}</div>
@@ -519,14 +507,18 @@
   /* ── Init ─────────────────────────────────────────────── */
   function init() {
     offsetTop  = window.innerHeight - 400;
-    offsetLeft = window.innerWidth  - 740;
+    offsetLeft = isMobile ? window.innerWidth + 100 : window.innerWidth - 740;
 
     const [active, ...rest] = order;
     const da = detailsEven ? '#details-even' : '#details-odd';
     const di = detailsEven ? '#details-odd'  : '#details-even';
 
-    set('#pagination', { top: offsetTop + 330, left: offsetLeft, y: 200, opacity: 0, zIndex: 60 });
-    set('nav',         { y: -200, opacity: 0 });
+    if (isMobile) {
+      set('#pagination', { top: window.innerHeight - 80, left: window.innerWidth / 2 - 49, y: 80, opacity: 0, zIndex: 60 });
+    } else {
+      set('#pagination', { top: offsetTop + 330, left: offsetLeft, y: 200, opacity: 0, zIndex: 60 });
+    }
+    set('nav', { y: -200, opacity: 0 });
 
     set(card(active),    { x: 0, y: 0, width: window.innerWidth, height: window.innerHeight });
     set(content(active), { x: 0, y: 0, opacity: 0 });
@@ -537,7 +529,6 @@
     set(`${di} .title-1`, { y: 100 });
     set(`${di} .title-2`, { y: 100 });
     set(`${di} .desc`,    { y: 50  });
-    set(`${di} .cta`,     { y: 60  });
 
     set('.progress-sub-foreground', { width: PROGRESS_W / order.length * (active + 1) });
 
@@ -553,17 +544,19 @@
 
     gsap.to('.cover', { x: window.innerWidth + 400, delay: 0.45, ease, onComplete: () => setTimeout(startLoop, 500) });
 
-    rest.forEach((i, idx) => {
-      gsap.to(card(i),    { x: offsetLeft + idx * (CARD_W + GAP), zIndex: 30, ease, delay: delay + 0.05 * idx });
-      gsap.to(content(i), { x: offsetLeft + idx * (CARD_W + GAP), zIndex: 40, ease, delay: delay + 0.05 * idx });
-    });
+    if (!isMobile) {
+      rest.forEach((i, idx) => {
+        gsap.to(card(i),    { x: offsetLeft + idx * (CARD_W + GAP), zIndex: 30, ease, delay: delay + 0.05 * idx });
+        gsap.to(content(i), { x: offsetLeft + idx * (CARD_W + GAP), zIndex: 40, ease, delay: delay + 0.05 * idx });
+      });
+    }
 
     gsap.to('#pagination', { y: 0, opacity: 1, ease, delay });
     gsap.to('nav',         { y: 0, opacity: 1, ease, delay });
     gsap.to(da,            { opacity: 1, x: 0, ease, delay });
   }
 
-  /* ── Step ──────────────────────────────────────────────── */
+  /* ── Step (forward) ───────────────────────────────────── */
   function step() {
     return new Promise(resolve => {
       order.push(order.shift());
@@ -575,18 +568,17 @@
       updateDetails(da, order[0]);
 
       set(da, { zIndex: 22 });
-      gsap.to(da,             { opacity: 1, delay: 0.4,  ease });
-      gsap.to(`${da} .text`,  { y: 0, delay: 0.10, duration: 0.70, ease });
+      gsap.to(da,               { opacity: 1, delay: 0.4,  ease });
+      gsap.to(`${da} .text`,    { y: 0, delay: 0.10, duration: 0.70, ease });
       gsap.to(`${da} .title-1`, { y: 0, delay: 0.15, duration: 0.70, ease });
       gsap.to(`${da} .title-2`, { y: 0, delay: 0.15, duration: 0.70, ease });
-      gsap.to(`${da} .desc`,  { y: 0, delay: 0.30, duration: 0.40, ease });
-      gsap.to(`${da} .cta`,   { y: 0, delay: 0.35, duration: 0.40, onComplete: resolve, ease });
+      gsap.to(`${da} .desc`,    { y: 0, delay: 0.30, duration: 0.40, onComplete: resolve, ease });
       set(di, { zIndex: 12 });
 
       const [active, ...rest] = order;
       const prv = rest[rest.length - 1];
 
-      set(card(prv),  { zIndex: 10 });
+      set(card(prv),    { zIndex: 10 });
       set(card(active), { zIndex: 20 });
       gsap.to(card(prv), { scale: 1.5, ease });
 
@@ -608,7 +600,6 @@
           set(`${di} .title-1`, { y: 100 });
           set(`${di} .title-2`, { y: 100 });
           set(`${di} .desc`,    { y: 50  });
-          set(`${di} .cta`,     { y: 60  });
         },
       });
 
@@ -623,10 +614,7 @@
     });
   }
 
-  /* ── Auto-loop ─────────────────────────────────────────────────────────────
-     Uses a GSAP Timeline so it can be paused (hover) or killed (arrow click)
-     without leaving dangling async promises.
-  ── */
+  /* ── Auto-loop ─────────────────────────────────────────── */
   let indicatorTL = null;
   let isStepping  = false;
   let isHovered   = false;
@@ -675,30 +663,95 @@
     }, 200);
   });
 
-  /* ── Arrow controls: skip the countdown, advance immediately ── */
+  /* ── Advance (forward) — fixed: no longer requires loop to be running ── */
   async function advance() {
     if (isStepping) return;
-    if (!indicatorTL) return;
-
-    indicatorTL.kill();
-    indicatorTL = null;
+    if (indicatorTL) { indicatorTL.kill(); indicatorTL = null; }
     set('.indicator', { x: -window.innerWidth });
-
     isStepping = true;
     await step();
     isStepping = false;
     if (!isHovered) startLoop();
   }
 
+  /* ── Retreat (backward) — teleports to previous slide ── */
+  async function retreat() {
+    if (isStepping) return;
+    if (indicatorTL) { indicatorTL.kill(); indicatorTL = null; }
+    set('.indicator', { x: -window.innerWidth });
+
+    order.unshift(order.pop());
+    detailsEven = !detailsEven;
+
+    const [active, ...rest] = order;
+    const da = detailsEven ? '#details-even' : '#details-odd';
+    const di = detailsEven ? '#details-odd'  : '#details-even';
+
+    updateDetails(da, active);
+
+    set(card(active), { x: 0, y: 0, width: window.innerWidth, height: window.innerHeight, zIndex: 20, borderRadius: 0, scale: 1 });
+    set(content(active), { opacity: 0 });
+
+    rest.forEach((i, idx) => {
+      const xNew = offsetLeft + idx * (CARD_W + GAP);
+      set(card(i),    { x: xNew, y: offsetTop, width: CARD_W, height: CARD_H, zIndex: 30, borderRadius: 8, scale: 1 });
+      set(content(i), { x: xNew, y: offsetTop + CARD_H - 90, opacity: 1, zIndex: 40 });
+      set(numEl(i),   { x: (idx + 1) * NUM_SZ });
+    });
+    set(numEl(active), { x: 0 });
+    set('.progress-sub-foreground', { width: PROGRESS_W / order.length * (active + 1) });
+
+    set(da, { zIndex: 22, opacity: 0, x: -40 });
+    set(di, { zIndex: 12, opacity: 0 });
+    set(`${di} .text`,    { y: 100 });
+    set(`${di} .title-1`, { y: 100 });
+    set(`${di} .title-2`, { y: 100 });
+    set(`${di} .desc`,    { y: 50  });
+
+    isStepping = true;
+    await new Promise(resolve => {
+      gsap.to(da,               { opacity: 1, x: 0,  duration: 0.4, ease });
+      gsap.to(`${da} .text`,    { y: 0, duration: 0.5, ease });
+      gsap.to(`${da} .title-1`, { y: 0, delay: 0.05, duration: 0.5, ease });
+      gsap.to(`${da} .title-2`, { y: 0, delay: 0.05, duration: 0.5, ease });
+      gsap.to(`${da} .desc`,    { y: 0, delay: 0.2, duration: 0.4, onComplete: resolve, ease });
+    });
+
+    isStepping = false;
+    if (!isHovered) startLoop();
+  }
+
+  /* ── Touch / swipe ──────────────────────────────────────── */
+  let touchStartX = null;
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+    if (dx < -50) advance();
+    if (dx >  50) retreat();
+  }, { passive: true });
+
+  /* ── Thumbnail click ────────────────────────────────────── */
+  document.querySelector('#demo').addEventListener('click', (e) => {
+    const cardEl = e.target.closest('.card');
+    if (!cardEl) return;
+    const dataIdx = parseInt(cardEl.dataset.idx);
+    if (dataIdx === order[0]) return;
+    advance();
+  });
+
   document.querySelector('.arrow-right').addEventListener('click', advance);
-  document.querySelector('.arrow-left').addEventListener('click', advance);
+  document.querySelector('.arrow-left').addEventListener('click', retreat);
 
   /* ── Start ─────────────────────────────────────────────── */
   function loadImage(src) {
     return new Promise(resolve => {
       const img = new Image();
       img.onload  = resolve;
-      img.onerror = resolve; // don't block on missing images
+      img.onerror = resolve;
       img.src = src;
     });
   }
