@@ -15,6 +15,9 @@
   <meta name="description" content="Matt and Sarah Shaeffer are raising their family in the heart of Alabama — rooted in Christian faith, homeschooling, and Southern community.">
   <meta name="keywords" content="Shaeffer family, Alabama family, Christian homeschool, Deatsville Alabama, faith family Southern life">
   <link rel="canonical" href="https://theshaeffers.com">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon.svg">
+  <meta name="theme-color" content="#c05a35">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://theshaeffers.com">
   <meta property="og:title" content="The Shaeffers | Faith &amp; Family in Alabama">
@@ -806,6 +809,11 @@
 
   document.querySelector('.arrow-right').addEventListener('click', advance);
   document.querySelector('.arrow-left').addEventListener('click', retreat);
+
+  /* ── PWA ──────────────────────────────────────────────── */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+  }
 
   /* ── Start ─────────────────────────────────────────────── */
   function loadImage(src) {

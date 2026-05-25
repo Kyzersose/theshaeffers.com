@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"D:\\\\Projects\\\\theshaeffers.com\\\\icons\")",
+      "Bash(Out-Null)",
+      "Bash(Write-Output \"done\")"
+    ]
+  }
+}

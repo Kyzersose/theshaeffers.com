@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0e0c09"/>
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="188" fill="none" stroke="#c05a35" stroke-width="2.5" opacity="0.55"/>
+  <!-- Inner ring -->
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#c05a35" stroke-width="1" opacity="0.25"/>
+  <!-- "S" letterform as a path — drawn to match the italic Cormorant Garamond feel -->
+  <text
+    x="256"
+    y="326"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="bold"
+    font-size="248"
+    fill="#fdf9f3"
+    opacity="0.93"
+    letter-spacing="-4"
+  >S</text>
+  <!-- Clay accent bar under the S -->
+  <rect x="218" y="358" width="76" height="3" rx="2" fill="#c05a35" opacity="0.7"/>
+</svg>

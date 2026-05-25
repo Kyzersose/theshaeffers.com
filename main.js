@@ -1,5 +1,9 @@
 // The Shaeffer Archivist
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+}
+
 (function () {
   const path = window.location.pathname;
   const page = path.split('/').pop() || 'index.html';
