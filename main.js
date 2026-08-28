@@ -24,7 +24,7 @@ if ('serviceWorker' in navigator) {
     }
   });
 
-  // Letter wave — split .nav-title into individually animated spans
+  // Letter wave: split .nav-title into individually animated spans
   const navTitle = document.querySelector('.nav-title');
   if (navTitle) {
     const chars = navTitle.textContent.split('');
