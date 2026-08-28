@@ -360,6 +360,69 @@
     }
     .site-credit a:hover { color: rgba(255,255,255,0.62); }
 
+    /* ─── Mobile swipe cue (hint → dots) ────────── */
+    .mobile-cue {
+      display: none;
+      position: fixed;
+      left: 0; right: 0;
+      bottom: calc(86px + env(safe-area-inset-bottom));
+      z-index: 55;
+      height: 18px;
+      place-items: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .mobile-cue.ready { opacity: 1; }
+    .mobile-cue > * {
+      grid-area: 1 / 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .cue-hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-shadow: 0 1px 6px rgba(14,12,9,0.6);
+    }
+    .cue-hint svg {
+      width: 15px; height: 15px;
+      animation: cue-nudge 1.9s ease-in-out infinite;
+    }
+    @keyframes cue-nudge {
+      0%, 100% { transform: translateX(-2px); opacity: 0.5; }
+      50%      { transform: translateX(4px);  opacity: 1;   }
+    }
+    .mobile-cue.dots-only .cue-hint { opacity: 0; }
+
+    .slide-dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      opacity: 0;
+    }
+    .mobile-cue.dots-only .slide-dots { opacity: 1; }
+    .slide-dots .dot {
+      width: 6px; height: 6px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.3);
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.5s ease;
+    }
+    .slide-dots .dot.on {
+      width: 20px;
+      background: var(--clay);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cue-hint svg { animation: none; }
+    }
+
     /* ─── Bottom Nav ────────────────────────────────── */
     .bottom-nav-home {
       display: none;
@@ -414,7 +477,7 @@
       }
       .details {
         top: auto !important;
-        bottom: calc(90px + env(safe-area-inset-bottom));
+        bottom: calc(114px + env(safe-area-inset-bottom));
         left: 24px;
         right: 24px;
         max-width: none;
@@ -430,6 +493,21 @@
       .bottom-nav-home { display: flex; }
       /* Hide pagination arrows on mobile — carousel auto-advances */
       .pagination { display: none !important; }
+      /* Swipe cue stands in for the desktop pagination bar */
+      .mobile-cue { display: grid; }
+    }
+
+    /* ─── Short phones (iPhone SE / 8 class) ─────── */
+    /* The long slides already fill these screens, so the cue gives up its
+       text row and tucks the dots into the strip above the bottom nav. */
+    @media (max-width: 767px) and (max-height: 620px) {
+      .details { bottom: calc(90px + env(safe-area-inset-bottom)); }
+      .mobile-cue {
+        bottom: calc(82px + env(safe-area-inset-bottom));
+        height: 6px;
+      }
+      .cue-hint { display: none; }
+      .slide-dots { opacity: 1; }
     }
   </style>
 </head>
@@ -469,6 +547,17 @@
   </div>
 
   <div class="site-credit">Site by <a href="https://cristocreativetech.com" target="_blank" rel="noopener">Cristo Creative Tech</a></div>
+
+  <!-- Mobile only: swipe hint that cross-fades into slide dots -->
+  <div class="mobile-cue" id="mobile-cue">
+    <div class="cue-hint">
+      <span>Swipe</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h13M12 6l6 6-6 6"/>
+      </svg>
+    </div>
+    <div class="slide-dots" id="slide-dots" aria-hidden="true"></div>
+  </div>
 
   <div class="pagination" id="pagination">
     <div class="arrow arrow-left">
@@ -568,6 +657,32 @@
     `<div class="item" id="slide-item-${i}">${i + 1}</div>`
   ).join('');
 
+  /* ── Mobile swipe cue ──────────────────────────── */
+  const cueEl  = $('mobile-cue');
+  const dotsEl = $('slide-dots');
+
+  let hintSeen = false;
+  try { hintSeen = sessionStorage.getItem('swipeHintSeen') === '1'; } catch (e) {}
+  let hintDone = !isMobile || hintSeen;
+
+  if (isMobile) {
+    dotsEl.innerHTML = data.map(() => '<div class="dot"></div>').join('');
+    if (hintDone) cueEl.classList.add('dots-only');
+  }
+
+  function syncDots() {
+    if (!isMobile) return;
+    dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === order[0]));
+  }
+
+  /* Hint retires once the visitor has seen a slide change */
+  function dismissHint() {
+    if (hintDone) return;
+    hintDone = true;
+    try { sessionStorage.setItem('swipeHintSeen', '1'); } catch (e) {}
+    cueEl.classList.add('dots-only');
+  }
+
   /* ── Init ─────────────────────────────────────────────── */
   function init() {
     offsetTop  = window.innerHeight - 400;
@@ -595,6 +710,7 @@
     set(`${di} .desc`,    { y: 50  });
 
     set('.progress-sub-foreground', { width: PROGRESS_W / order.length * (active + 1) });
+    syncDots();
 
     rest.forEach((i, idx) => {
       set(card(i),    { x: offsetLeft + 400 + idx * (CARD_W + GAP), y: offsetTop, width: CARD_W, height: CARD_H, zIndex: 30, borderRadius: 8 });
@@ -616,6 +732,7 @@
     }
 
     gsap.to('#pagination', { y: 0, opacity: 1, ease, delay });
+    if (isMobile) setTimeout(() => cueEl.classList.add('ready'), (delay + 0.45) * 1000);
     gsap.to('nav',         { y: 0, opacity: 1, ease, delay });
     gsap.to(da,            { opacity: 1, x: 0, ease, delay });
   }
@@ -650,6 +767,8 @@
       gsap.to(numEl(active),   { x: 0,        ease });
       gsap.to(numEl(prv),      { x: -NUM_SZ,  ease });
       gsap.to('.progress-sub-foreground', { width: PROGRESS_W / order.length * (active + 1), ease });
+      syncDots();
+      dismissHint();
 
       gsap.to(card(active), {
         x: 0, y: 0, ease,
@@ -764,6 +883,8 @@
     });
     set(numEl(active), { x: 0 });
     set('.progress-sub-foreground', { width: PROGRESS_W / order.length * (active + 1) });
+    syncDots();
+    dismissHint();
 
     set(da, { zIndex: 22, opacity: 0, x: -40 });
     set(di, { zIndex: 12, opacity: 0 });
