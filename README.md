@@ -26,7 +26,28 @@ Add an entry to the `data` array in the inline script at the bottom of `index.ht
 
 ## Deployment
 
-Pushes to `main` trigger a GitHub Actions workflow (`.github/workflows/deploy-to-s3.yml`) that syncs the site to an S3 bucket and purges the Cloudflare cache. Credentials are stored as GitHub Actions secrets and are not part of the repo.
+Every push to `main` automatically deploys the site via a GitHub Actions workflow, [`.github/workflows/deploy-to-s3.yml`](.github/workflows/deploy-to-s3.yml). There is nothing to build, so the workflow just publishes the files as they are.
+
+```
+push to main → checkout → configure AWS credentials → upload changed files to S3 → purge Cloudflare cache
+```
+
+1. **Checkout** the repository with full history.
+2. **Configure AWS credentials** (region `us-east-1`).
+3. **Sync only what changed.** The workflow runs `git diff` between the previous and new commit, uploads added or modified files with `aws s3 cp`, and removes deleted files with `aws s3 rm`. `.github/` and `screenshots/` are never deployed. If there is no usable previous commit (first push or force push), it falls back to a full `aws s3 sync --delete`.
+4. **Purge the Cloudflare cache** (`purge_everything`) so visitors get the new version right away. This is skipped when nothing was deployed.
+
+### Required secrets
+
+Set these under **Settings → Secrets and variables → Actions**. They are never stored in the repo.
+
+| Secret | Purpose |
+| --- | --- |
+| `AWS_ACCESS_KEY_ID` | AWS IAM user access key |
+| `AWS_SECRET_ACCESS_KEY` | AWS IAM user secret key |
+| `AWS_S3_BUCKET` | Name of the S3 bucket hosting the site |
+| `CLOUDFLARE_ZONE_ID` | Cloudflare zone for theshaeffers.com |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare token with cache purge permission |
 
 ## Credits
 

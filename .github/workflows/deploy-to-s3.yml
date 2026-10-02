@@ -8,9 +8,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Check out the repository code
+      # Step 1: Check out the repository code (full history so we can diff against the previous deploy)
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       # Step 2: Configure AWS Credentials
       - name: Configure AWS Credentials
@@ -20,13 +22,51 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1  # Your bucket's region
 
-      # Step 3: Sync files to S3
-      - name: Sync files to S3
+      # Step 3: Upload only the files that changed in this push, and delete removed ones.
+      # Falls back to a full sync if there is no usable previous commit (first push, force push).
+      - name: Sync changed files to S3
+        id: sync
+        env:
+          BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
         run: |
-          aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude ".git/*" --exclude ".github/*" --exclude "screenshots/*" --size-only
+          set -euo pipefail
 
-      # Step 4: Invalidate Cloudflare cache
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            echo "No usable previous commit; running full sync"
+            aws s3 sync . "s3://$BUCKET" --delete --exclude ".git/*" --exclude ".github/*" --exclude "screenshots/*"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Paths that are never deployed
+          skip() { case "$1" in .git/*|.github/*|screenshots/*) return 0 ;; *) return 1 ;; esac; }
+
+          changed=false
+
+          # Added or modified files -> upload
+          while IFS= read -r -d '' f; do
+            skip "$f" && continue
+            echo "Uploading $f"
+            aws s3 cp "$f" "s3://$BUCKET/$f"
+            changed=true
+          done < <(git diff --name-only --no-renames --diff-filter=AM -z "$BEFORE" "$AFTER")
+
+          # Deleted files (renames show up as a delete + add) -> remove
+          while IFS= read -r -d '' f; do
+            skip "$f" && continue
+            echo "Deleting $f"
+            aws s3 rm "s3://$BUCKET/$f"
+            changed=true
+          done < <(git diff --name-only --no-renames --diff-filter=D -z "$BEFORE" "$AFTER")
+
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
+      # Step 4: Invalidate Cloudflare cache (only if something was deployed)
       - name: Purge Cloudflare Cache
+        if: steps.sync.outputs.changed == 'true'
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
           -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
